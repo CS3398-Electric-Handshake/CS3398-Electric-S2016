@@ -1,0 +1,68 @@
+header {
+	background: $white;
+	left: 0;
+	padding: 12px 10px 10px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+    .wrapper {
+	    @extend %group;
+	    max-width: 1000px;
+	    position: relative;
+	    h1 {
+	    	float: left;
+	    	margin-top: 10px;
+	    };
+    }
+    
+    .brand {
+	    float: left;
+        font-size: toem(26px);
+        text-decoration: none;
+        top: 0;
+    } 
+    
+    .menu-btn {
+    	color: #47A617;
+		font-size: toem(26px);
+		position: absolute;
+		right: 0;
+		text-decoration: none;
+		@include transition(none, 0s, linear);
+		z-index: 1;
+		
+		&.active {
+			color: $white;
+			position: fixed;
+			right: 10px;
+			z-index: 5;
+		}
+	}
+	
+	
+
+    @include breakpoint(tablet) {
+	    padding: 15px 20px;
+	    
+		.brand {
+			font-size: toem(45px);
+		}
+		
+		.menu-btn {
+		   font-size: toem(50px);
+		   
+		   &.active {
+				position: fixed;
+				right: 20px;
+			}
+		}
+	}
+    
+    @include breakpoint(desktop) {
+       .icon-menu {
+	      display: none;	
+       }
+        
+    }
+}

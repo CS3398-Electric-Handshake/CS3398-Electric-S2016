@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "ie9.css",
+	"sources": [
+		"ie9.scss"
+	],
+	"mappings": "",
+	"names": []
+}

@@ -1,0 +1,191 @@
+footer {
+	position: absolute;
+	width: 100%;
+    .wrapper { 
+	    font: toem(16px) $lato;
+	    @extend %group;
+	    max-width: 1000px;
+	    padding: 35px 10px 40px;
+	    position: relative;
+	    text-align: center;
+    }
+    a {
+	    color: $black;
+	    text-decoration: none;
+    }
+    .opacity-change {
+	    &.active {
+		    opacity: 0.6
+	    }
+    }
+    .icon-wolfgang {
+        font-size: toem(45px);
+        margin-top: 68px;
+        margin-bottom:34px;
+    }
+    .copy-icon {
+	    margin-top: 29px;
+    }
+    .icon-wolfgang, .icon-kooba {
+	    color: $darkGreen;
+	    display: block;
+        text-decoration: none;
+    }
+    .f_menu {
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		margin-bottom: 36px;
+		li {
+
+			line-height: toem(38px,16px);
+		}
+    }
+    .f_sub-menu{
+	    font-size: toem(14px);
+		margin-bottom: 10px;
+	    width: 100%;
+	    li { 
+		    display: inline;
+		    &:not(:first-child){
+			    margin-left: 15px;
+		    }
+		    &:not(:last-child) {
+			    margin-right: 15px;
+		    }
+	    }    
+    }
+    #search {
+	    display: none;
+	    @extend %group;
+	    margin-top: 11px;
+	    input[type=text] {
+		    border: 1px solid $lightGreen;
+		    color: $black;
+			display: block;
+			font: toem(16.84px) $lato;
+			margin-bottom: 6px;
+			padding: 13px 10px 14px;
+			width: 100%;
+			&:focus {
+				outline: $redPurple;
+			}
+		}
+		::-webkit-input-placeholder {
+			color: $black;
+		}
+		.btn {
+			background: $pinkP;
+			border: none;
+			min-width: 300px;
+			&:hover {
+				background: $lightPink;
+			}
+		}
+		&.active {
+			display: block;
+		}
+		
+    }
+    
+    @include breakpoint(tablet) {
+	    .wrapper {
+		    padding: 9px 0 0;
+		}
+	    .f_menu {
+		    width: 100%;
+		    margin-bottom: 25px;
+		    li {
+			    display: inline;
+			    line-height: toem(34px, 16px);
+			    margin: 0 20px;
+		    }
+	    }
+	    .f_sub-menu {
+		    margin-bottom: 0;
+		    li {
+			    margin: 0 16px;
+			}
+	    }
+	    .icon-wolfgang, .icon-kooba {
+		    margin:67px 0 28px;
+		    
+	    }
+	    .icon-wolfgang {
+		    opacity: .6;
+	    }
+	    .copy-icon {
+		    display: none;
+	    }
+	    #search {
+		    margin-top: 0; 
+		    width: 100%;
+		    input[type=text] {
+			    display: inline-block;
+			    margin-right: 17px;
+			    width: 340px;
+			}
+			.btn {
+				min-width: 220px;
+			}
+		}
+    }
+    
+	@include breakpoint(desktop) {
+		padding-bottom: 66px;
+		.wrapper {
+			height: auto;
+			padding: 0;
+			text-align: left;
+			span {
+				float: right;
+				margin-top: 44px;
+			}
+		}
+		.f_menu, .f_sub-menu,  {
+			float: left;
+			margin-bottom: 2px;
+			width: 58%;
+			li {
+				&:first-child {
+					margin-left: 10px;
+				}
+			}
+		}
+		.copy-icon {
+			display: initial;
+		}
+		.icon-wolfgang {
+			margin: 0;
+			opacity: 1;
+			text-align: right;
+			&.active {
+				height: auto;
+				margin-top: 0;
+			}
+		}
+		.opacity-change {
+			&.active {
+				opacity: 1;
+			}
+		}
+		.icon-kooba {
+			float: left;
+			margin: 38px 0 0 10px;
+			width: 33%;
+		}
+		#search {
+			@include transition(opacity, 1.8s, ease-in-out);
+			float: left;
+			margin-left: 10px;
+			width: 70%;
+			input[type=text] {
+			    margin-right: 10px;
+			    width: 302px;
+			}
+			.btn {
+				margin: 10px 0;
+				min-width: 160px;
+			}
+		}
+	}
+}

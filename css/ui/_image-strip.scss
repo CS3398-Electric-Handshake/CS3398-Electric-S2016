@@ -1,0 +1,116 @@
+.image-strip {
+	@extend %group;
+	padding: 38px 0 37px;
+	position: relative;
+	text-align: center;
+	.wrapper {
+		max-width: 1000px;
+	}
+	h3 {
+		margin: 2px 0 45px;
+		letter-spacing: 0.08em;
+	}
+	&:after{
+        background: $txstGold;
+		display: inline-block;
+		height: 22px;
+		left: 50%;
+		position: absolute;
+		top: 0;
+        width: 2px;
+	}
+	&:before{
+        background: $txstMaroon;
+		bottom: 0;
+		display: inline-block;
+		height: 21px;
+		left: 50%;
+		position: absolute;
+        width: 2px;
+	}
+	.try {
+		@extend %group;
+		margin-top: 30px;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin: 0 24px 34px;
+			min-width: 34.3%;
+			vertical-align: middle; 
+			img {
+				width: 110px;
+			}
+			.unicef {
+				margin-top: 8px;
+				margin-bottom: 2px;
+			}
+			.one23 {
+				margin-top: 8px;
+			}
+			.cityjet {
+				margin-top: 18px;
+			}
+			.brown {
+				margin-top: 22px;
+			}
+			.lwoods {
+				margin-top: 5px;
+			}
+			.zurich {
+				height: 58px;
+				margin-bottom: 8px;
+				width: 98px;
+			}
+		}
+	}
+
+	
+	@include breakpoint(tablet) {
+		padding: 35px 0 20px;
+		&:after {
+			height: 38px;
+		}
+		
+		h3 {
+			margin-top: 20px;
+		}
+		.try {
+			padding-bottom: 0px;
+			li {
+				min-width: 30%;
+				margin: 0 10px 58px;
+				img {
+					max-width: 100%;
+					width: 160px;
+				}
+				.brown, .cityjet {
+					margin-top: 32px;
+				}
+				.zurich {
+					width: 116px;
+					height: auto;
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(desktop){
+		.try {
+			li {
+				min-width: 22%;
+				.one23 {
+					margin-top: 0;
+				}
+				.cityjet {
+					margin-top: 20px ;
+				}
+				.lwoods {
+					margin-top: 30px;
+				}
+				.ijobs {
+					margin-top: 22px;
+				}
+			}
+		}
+	}
+}

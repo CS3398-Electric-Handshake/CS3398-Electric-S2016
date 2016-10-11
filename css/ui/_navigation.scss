@@ -1,0 +1,120 @@
+#navigation {
+   background: #47A617;
+   box-shadow: inset 10px 0px 18px -6px rgba(0,0,0,0.35);
+   color: $white;
+   height: 100%;
+   position: fixed;
+   right: -225px;
+   top: 0;
+   transition: all .4s;
+   width: 225px;
+ 
+	  
+   &.active {
+      right: 0px;
+      z-index: 4;
+   }
+   
+   .menu, .sub-menu {
+	   margin-top: 30px;
+	   
+	   li {
+		   margin: 25px 15px 10px;
+	   }
+	   
+		a {
+			font: 600 toem(16px) $lato;
+			text-decoration: none;
+			
+			&:hover {
+				color: $txstMaroon;
+			}
+		}
+   }
+   
+   .sub-menu {
+	   
+	   li {
+		   margin: 10px 15px;
+	   }
+			
+		a {
+			font-weight: normal;
+		}
+   }
+   
+   strong {
+		border-bottom: 2px solid $white;
+		display: inline-block;
+		font-size: toem(14px);
+		margin-top: 18px;
+		padding: 0 0 8px 15px;
+   }
+   
+   @include breakpoint(tablet) {
+      right: -391px;
+      width: 391px;
+      
+      .menu {
+	      margin-top: 45px;
+	      
+	      li {
+		      margin-bottom: 42px;
+	      }
+	      
+	      a {
+		      font-size: toem(21px);
+	      }
+      }
+      
+      .sub-menu {
+	      margin-top: 50px;
+	      
+	      li {
+		      margin-bottom: 18px;
+	      }
+      }
+            
+      strong {
+	      font-size: 16px;
+		  margin-top: 36px;
+		  padding: 0 0 10px 22px;
+      }
+   } 
+     
+   @include breakpoint(desktop) {
+	  background: none;
+	  box-shadow: none;
+	  height: auto;
+	  float: right;
+	  margin-top: 6px;
+	  position: static;
+	  width: auto;
+      
+      .menu {
+	     margin: 0;
+	     
+	     li {
+		    float: left;
+		    margin: 0 50px 0 0;
+		    
+		    &:last-child {
+			    margin: 0;
+		    }
+	     }
+	     
+	     a {
+	     	color: #47A617;
+	        font-size: 16px;
+	     }
+	  } 
+	  
+      .sub-menu {
+	    	display: none;
+      }
+      strong {
+	   		display: none;
+      }
+         
+   }
+}

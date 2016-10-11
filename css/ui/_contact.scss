@@ -1,0 +1,143 @@
+.contact {
+	@extend %group;
+	font: toem(16px) $lato;
+	max-width: 960px;
+	min-height: 250px;
+	position: relative;
+	text-align: center;
+	.wrapper {
+		@extend %group;
+		font: toem(16px) $lato;
+		padding-top: 62px;
+		position: relative;
+		text-align: center;
+		#map { 
+			height: 180px;
+			margin: 21px 32px;
+		}
+		h3 {
+			margin-bottom: 47px;
+			text-transform: uppercase;
+		}
+		.info-content {
+			background: $txstGold;
+			color: $white;	
+			padding: 4px 10px 12px;
+			text-align: left;
+			h5 {
+				font-weight: 600;
+				margin-top: 20px;
+			}
+			p {
+				line-height: toem(25px,16px);
+				padding:0 51% 5px 0;
+			}
+		}
+		.social {
+			color: $txstMaroon;
+			display: block;
+			margin: 38px 0 26px;
+		}
+		ul {
+			li {
+				display: inline-block;
+				font-size: toem(24px);
+				margin-bottom: 50px;
+				text-decoration: none;
+				vertical-align: middle;
+				width: 24%;
+			}
+		}
+		.icon-twitter {
+				font-size: toem(22px);
+		}
+		&:after{
+	        background: $txstMaroon;
+			display: inline-block;
+			height: 51px;
+			left: 50%;
+			position: absolute;
+			top: 0;
+	        width: 2px;
+		}
+	}
+	@include breakpoint(tablet) {
+		max-width: 100%;
+		min-height: 383px;
+		.wrapper {
+			padding-top: 62px;
+			ul {
+				li {
+					margin: 48px 0 46px;
+					width: 9%;
+				}
+			}
+			.contact-info{
+				padding:0 20px 50px;
+				.info-content {
+					float: right;
+					margin-top: 67px;
+					padding-bottom: 62px;
+					width: 36%;
+					
+					h5 {
+						margin: 24px 0 0 12px;
+					}
+					p {
+						font-size: toem(21px);
+						line-height: toem(24px,16px); 
+						margin-left: 12px; 
+						padding: 0 16% 0 0;
+					}
+				}
+				.social {
+					border-bottom: 1px solid $txstMaroon;
+					float: left;
+					margin-top: 52px;
+					padding-left: 60px;
+				}	
+			}
+			#map {
+				display: inline-block;
+				height: 264px;
+				margin: 0;
+				width: 64%;
+			}
+		}
+	}
+	@include breakpoint(desktop) {
+		min-height: 300px;
+		.wrapper {
+			max-width: 1000px;
+			.btn {
+				margin-top: 30px;
+			}
+			.contact-info {
+				padding: 0 0 50px 0;
+				ul {
+					li {
+						margin-top: 35px;
+					}
+				}
+				.info-content {
+					margin-top: 136px;
+					padding-bottom: 62px;
+					width: 37.5%;
+					p {
+						padding-right: 43%;
+					}
+				}
+				.social {
+					font-weight: 600;
+					letter-spacing: 0.08em;
+					margin-top:42px;
+					padding-left: 11%;
+				}
+			}
+			#map {
+				height: 356px;
+				width: 62.5%;
+			}
+		}
+	}
+}

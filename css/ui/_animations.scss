@@ -1,0 +1,267 @@
+.set {
+    background: $white;
+    padding: 150px 20px;
+    text-align: center;
+    
+    &:nth-child(2n){
+        background: #333;
+        
+        a {
+            color: $white;
+            
+            &.text-slide {
+                color: #242424;
+            }
+            
+            &.text-height {
+                color: #242424;
+            }
+        }
+    }
+    
+    a {
+        color: $textcolour;
+        display: inline-block;
+        font: 700 toem(25px) $lato;
+        letter-spacing: 0.08em;
+        line-height: toem(35px, 25px);
+        margin: 20px;
+        text-decoration: none;
+    }
+    
+    .underline {
+        
+        position: relative;
+        
+        &:before {
+            background: $textcolour;
+            bottom: 0;
+            content: '';
+            height: 2px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            @include transition(bottom, .1s, linear);
+        }
+        
+        &:hover {
+            &:before {
+                bottom: -5px;
+            }
+        }
+    }
+    
+    .underline-extend {
+        position: relative;
+
+        &:after {
+            background: $lightGreen;
+            bottom: -5px;
+            content: '';
+            height: 2px;
+            left: 0;
+            position: absolute;
+            width: 0;
+            z-index: 2;
+            @include transition(width, .5s, cubic-bezier(0,1.66,.21,.94));
+        }
+        
+        &:hover {
+            
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    
+    .text-duplicate {
+        position: relative;
+        
+        &:after {
+            content: attr(data-content);
+            color: $textcolour;
+            left: 0;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            z-index: 2;
+            @include transition(all, .3s, linear);
+        }
+        
+        &:hover {
+            
+            color: $white;
+            
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    
+    .text-slide {
+        color: #242424;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        
+        
+        &:before {
+            content: attr(data-content);
+            color: $white;
+            left: 0;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            z-index: 2;
+            @include transition(all, .4s, cubic-bezier(.06,1.14,.1,.76));
+        }
+        
+        &:hover {
+            
+            color: black;
+            
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+    
+    .borders {
+        position: relative;
+        
+        &:before {
+            background: $textcolour;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            opacity: 0;
+            @include transition(all, .2s, linear);
+        }
+        
+        &:after {
+            background: $textcolour;
+            bottom: 50%;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            @include transition(all, .2s, linear);
+        }
+        
+        &:hover {
+            &:before {
+                top: 0;
+                opacity: 1;
+            }
+            
+            &:after {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    }
+    
+    .text-height {
+        color: #242424;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+
+
+        &:before {
+            content: attr(data-content);
+            color: $white;
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            z-index: 2;
+            @include transition(all, .4s, ease-in-out);
+        }
+        
+        &:after {
+            background: $white;
+            bottom: 0;
+            content: '';
+            height: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            @include delayed-transition(height, .2s, ease-in-out, .2s);
+        }
+
+        &:hover {
+
+            color: black;
+
+            &:before {
+                height: 100%;
+            }
+            
+            &:after{
+                height: 2px;
+            }
+        }
+    }
+}
+
+
+
+
+
+/******************************************************  
+                    BOX ANIMATIONS   
+******************************************************/
+.boxes {
+    
+    padding: 100px 20px;
+    
+    .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        @extend %group;
+    }
+}
+
+.single-box {
+    max-width: 350px;
+    
+    @include breakpoint(tablet){
+        float: left;
+        display: block;
+        width: 33.3%;
+    }
+}
+
+.bouncy {
+    
+    padding: 100px 20px;
+    position: relative;
+    
+    svg {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        
+        .box {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+

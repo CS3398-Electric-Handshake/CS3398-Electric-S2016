@@ -1,0 +1,45 @@
+.project-strip {
+	@extend %group;
+	font: toem(16px) $lato;
+	max-width: 960px;
+	position: relative;
+	text-align: center;
+	.wrapper {
+		padding-bottom: 10px;
+		color: $txstMaroon;
+		.btn {
+			background: $txstGold;
+			min-width: 250px;
+			font-size: toem(16px);
+		}
+		.big {
+			color: $txstMaroon;
+			font-size: toem(28px);
+			line-height: toem(26px,20px);
+			margin:0 40px 12px;
+		}
+	}
+	
+	@include breakpoint(tablet) {
+		max-width: 100%;
+		.wrapper {
+			padding-bottom: 30px;
+			.big {
+				font-size: toem(51px);
+				letter-spacing: -0.045em;
+				margin: 15px 0 20px;
+			}
+		}
+	}
+	@include breakpoint(desktop) {
+		.wrapper {
+			max-width: 1000px;
+			.big {
+				margin: 4px 0 0;
+			}
+			.btn {
+				margin-top: 30px;
+			}
+		}
+	}			
+}

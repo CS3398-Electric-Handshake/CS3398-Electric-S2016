@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'wolfgang';
+    src:    url('fonts/wolfgang.eot?hpbxm5');
+    src:    url('fonts/wolfgang.eot?hpbxm5#iefix') format('embedded-opentype'),
+        url('fonts/wolfgang.woff2?hpbxm5') format('woff2'),
+        url('fonts/wolfgang.ttf?hpbxm5') format('truetype'),
+        url('fonts/wolfgang.woff?hpbxm5') format('woff'),
+        url('fonts/wolfgang.svg?hpbxm5#wolfgang') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'wolfgang' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dog:before {
+    content: "\e908";
+}
+.icon-quote:before {
+    content: "\e900";
+}
+.icon-linkedin:before {
+    content: "\e901";
+    color: $linkedIn;
+    
+    @include breakpoint(tablet) {
+	    color: $iconGrey;
+	    &:hover {
+		    color: $linkedIn;
+	    }
+    }
+}
+.icon-facebook:before {
+    content: "\e902";
+    color: $thefacebook;
+    @include breakpoint(tablet) {
+	    color: $iconGrey;
+	    &:hover {
+		    color: $thefacebook;
+	    }
+    }
+}
+.icon-google:before {
+    content: "\e903";
+    color: $googRed;
+    @include breakpoint(tablet) {
+	    color: $iconGrey;
+	    &:hover {
+		    color: $googRed;
+	    }
+    }
+}
+.icon-twitter:before {
+    content: "\e904";
+    color: $twitBlue;
+    @include breakpoint(tablet) {
+	    color: $iconGrey;
+	    &:hover {
+		    color: $twitBlue;
+	    }
+    }
+}
+.icon-menu:before {
+    content: "\e905";
+}
+.icon-kooba:before {
+    content: "\e906";
+}
+.icon-wolfgang:before {
+    content: "\e907";
+}
+.icon-location:before {
+    content: "\e947";
+}
+.icon-location2:before {
+    content: "\e948";
+}
+

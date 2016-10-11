@@ -1,0 +1,136 @@
+.large-banner {
+	left: 0;
+	min-height: 476px;
+	@extend %group;
+	position: relative;
+	top:0;
+
+	.wrapper {
+		max-width: 960px;
+	}
+	
+	.bg-image {
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		
+		img {
+			bottom: -9999px;
+			display: block;
+			left: -9999px;
+			margin: auto;
+			min-height: 100%;
+			min-width: 100%;
+			position: absolute;
+			right: -9999px;
+			top: -9809px;
+		}
+		&:after {
+			background: rgba($txstGold, 0.40);
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+	.overlay {
+		@extend %group;
+		margin: 80px 4px 0;
+		position: relative;
+		text-align: center;
+		
+		.search-box {
+			display: inline-block;
+			.search-label {
+				background: rgba(0,0,0,0.6);
+				color: $white;
+				display: block;
+				font: toem(16px) $lato;
+				letter-spacing: 0.01em;
+				margin: 0 19%;
+				padding: 5px 10px;
+			}
+			.inputs {
+				background: rgba(0,0,0,0.6);
+				padding: 5px;
+				.btn {
+					background: $txstMaroon;
+					border: none;
+					border-radius: 0 8px 8px 0;
+					margin: 0;
+					min-width: 20%;
+					min-height: 30px;
+					padding: 0 20px;
+					width: auto;
+					&:hover {
+						background: $lightGreen;
+					}
+				}	
+				input[type=text] {
+					border: none;
+					border-radius: 8px 0 0 8px;
+					font: toem(16px) $lato;
+					color: $black;
+					padding: 5px 10px;
+					width: 60%;
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(tablet) {
+		.bg-image {
+			img {
+				top: -9999px;
+			}
+		}
+		.overlay {
+			padding: 80px 0 0;
+			h1 {
+				font: 500 toem(62px) $lato;
+				line-height: toem(74px, 50px);
+				margin: 0;
+			}
+			
+			p {
+				font-size: toem(26px);
+				margin: 6px auto;
+				padding-bottom: 39px;
+			}
+		}
+	}
+	
+	@include breakpoint(desktop) {
+		.bg-image {
+			&:before {
+				@include gradient-vertical(rgba($black, 0.17),rgba($black, 0));
+				content: "";
+				height: 150px;
+				left:0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+			}
+		}
+		.overlay {
+			padding: 80px 0 0;
+			
+			h1 {
+				font-size: toem(60px);
+				line-height: toem(70px, 60px);
+			}
+			
+			p {
+				max-width: none;
+			}
+		}
+	}
+}

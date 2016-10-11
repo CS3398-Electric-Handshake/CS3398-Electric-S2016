@@ -1,0 +1,63 @@
+a {
+	outline: none;
+	color: $white;
+	border: none;
+	@include transition(all, 0.3s, ease-in-out);
+}
+
+body {
+	background: $bodycolour;
+	font: 400 toem($base-font) $lato;
+	line-height:1.3em;
+	position: relative;
+}
+
+.btn {
+	background: $lightPurple;
+	color: $white;
+	display: inline-block;
+	border-radius: 25px;
+	font: bold toem(15px) $lato;
+	letter-spacing: 0.07em;
+	margin: 10px 0;
+	min-width: 220px;
+	min-height: 50px;
+	padding: 15px 36px;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	&:hover {
+		background: lighten($lightPurple, 10%);
+	}
+	
+	@include breakpoint(tablet) {
+		
+		font-size: toem(17px);
+		margin: 16px 0;
+		min-width: 340px;
+
+	}
+	
+	@include breakpoint(desktop) {
+		margin: 42px 0;
+	}
+}
+
+/*
+img
+h1-6
+p
+blockquote
+strong
+ul
+ol
+li
+i
+em
+cite
+table
+th
+tr
+td
+form
+*/
