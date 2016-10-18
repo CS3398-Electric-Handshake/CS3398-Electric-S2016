@@ -1,0 +1,61 @@
+.slide-banner {
+	
+	min-height: 10px;
+    position: absolute;
+    top: 294px;
+    height: 652px;
+    width: 980px;
+    left: 0px;
+	.bg-image {
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		
+		img {
+			bottom: -9999px;
+			display: block;
+			left: -9999px;
+			margin: auto;
+			min-height: 100%;
+			min-width: 100%;
+			position: absolute;
+			right: -9999px;
+			top: -9809px;
+		}
+		&:after {
+			background: rgba($txstGold, 0.40);
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+	
+	
+	@include breakpoint(tablet) {
+		.bg-image {
+			img {
+				top: -9999px;
+			}
+		}
+	}
+	
+	@include breakpoint(desktop) {
+		.bg-image {
+			&:before {
+				@include gradient-vertical(rgba($black, 0.17),rgba($black, 0));
+				content: "";
+				height: 150px;
+				left:0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+			}
+		}
+	}
+}
