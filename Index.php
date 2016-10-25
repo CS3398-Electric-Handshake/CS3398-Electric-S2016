@@ -1,10 +1,10 @@
 ﻿<?php
  ob_start();
  session_start();
- require_once 'dbconnect.php';
+ require_once 'DBconnect.php';
  
- // it will never let you open index(login) page if session is set
- if ( isset($_SESSION['user'])!="" ) {
+ //it will never let you open index(login) page if session is set
+  if ( isset($_SESSION['user'])!="" ) {
   header("Location: home.php");
   exit;
  }
@@ -41,9 +41,9 @@
    
    $password = hash('sha256', $pass); // password hashing using SHA256
   
-   $res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
-   $row=mysql_fetch_array($res);
-   $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
+   $res=mysqli_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
+   $row=mysqli_fetch_array($res);
+   $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
    
    if( $count == 1 && $row['userPass']==$password ) {
     $_SESSION['user'] = $row['userId'];
@@ -123,7 +123,7 @@
             </div>
             
             <div class="form-group">
-             <a href="register.php">Sign Up Here...</a>
+             <a href="Register.php">Sign Up Here...</a>
             </div>
         
         </div>

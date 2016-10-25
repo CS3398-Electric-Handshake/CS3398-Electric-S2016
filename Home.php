@@ -1,11 +1,11 @@
 <?php
  ob_start();
  session_start();
- require_once 'dbconnect.php';
+ require_once 'DBconnect.php';
  
  // if session is not set this will redirect to login page
  if( !isset($_SESSION['user']) ) {
-  header("Location: index.php");
+  header("Location: Index.php");
   exit;
  }
  // select loggedin users detail
@@ -45,7 +45,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
      <span class="glyphicon glyphicon-user"></span>&nbsp;Hi' <?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+                <li><a href="Logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
               </ul>
             </li>
           </ul>
