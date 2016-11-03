@@ -2,10 +2,11 @@
 	@extend %group;
 	font: toem(16px) $lato;
 	max-width: 960px;
+	height: 300px;
 	position: relative;
 	text-align: center;
 	.wrapper {
-		padding-bottom: 10px;
+		padding-top: 60px;
 		color: $black;
 		.btn {
 			background: #47A617;
