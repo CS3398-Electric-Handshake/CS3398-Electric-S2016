@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  ob_start();
  session_start();
  if( isset($_SESSION['user'])!="" ){
@@ -7,6 +7,11 @@
  include_once 'DBconnect.php';
 
  $error = false;
+ $name = "";
+ $email = "";
+ $nameError = "";
+ $emailError = "";
+ $passError = "";
 
  if ( isset($_POST['btn-signup']) ) {
   
@@ -41,8 +46,9 @@
    $emailError = "Please enter valid email address.";
   } else {
    // check email exist or not
-   $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
-   $result = mysqli_query($query);
+      
+   $query = "SELECT email FROM user WHERE email='$email'";
+   $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
    $count = mysqli_num_rows($result);
    if($count!=0){
     $error = true;
@@ -59,13 +65,13 @@
   }
   
   // password encrypt using SHA256();
-  $password = hash('sha256', $pass);
+  $password = $pass;
   
   // if there's no error, continue to signup
   if( !$error ) {
    
-   $query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
-   $res = mysqli_query($query);
+   $query = "INSERT INTO user(first_name, email, Password) VALUES('$name','$email','$password')";
+   $res = mysqli_query($conn, $query) or die(mysqli_error($conn));
     
    if ($res) {
     $errTyp = "success";
@@ -87,7 +93,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage - Login & Registration System</title>
+<title>Login</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>

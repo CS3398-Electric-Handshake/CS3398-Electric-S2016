@@ -1,4 +1,4 @@
-﻿<?php
+<?php
  ob_start();
  session_start();
  require_once 'DBconnect.php';
@@ -10,6 +10,9 @@
  }
  
  $error = false;
+ $emailError = "";
+ $passError = "";
+ $email = "";
  
  if( isset($_POST['btn-login']) ) { 
   
@@ -39,14 +42,14 @@
   // if there's no error, continue to login
   if (!$error) {
    
-   $password = hash('sha256', $pass); // password hashing using SHA256
+   $password = $pass; // password hashing using SHA256
   
-   $res=mysqli_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
-   $row=mysqli_fetch_array($res);
+   $res=mysqli_query($conn, "SELECT email, first_name, Password FROM user WHERE email='$email'") or die(mysqli_error($conn));
+      $row=mysqli_fetch_array($res);
    $count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
    
-   if( $count == 1 && $row['userPass']==$password ) {
-    $_SESSION['user'] = $row['userId'];
+   if( $count == 1 && $row['Password']==$password ) {
+    $_SESSION['user'] = $row['first_name'];
     header("Location: home.php");
    } else {
     $errMSG = "Incorrect Credentials, Try again...";
@@ -125,9 +128,13 @@
             <div class="form-group">
              <a href="Register.php">Sign Up Here...</a>
             </div>
-        
+
+            <div class="form-group">
+            <a href="index.html">Home</a>
+            </div>
+
         </div>
-   
+
     </form>
     </div> 
 
