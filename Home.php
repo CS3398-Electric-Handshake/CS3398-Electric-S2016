@@ -71,7 +71,13 @@ document.createElement( "picture" );
 <div class="text-strip" class="green">
 <div class="wrapper">
 <blockquote>SnoutScout</blockquote><p><font size="+2"><br/>Get started, are you a cat person or a dog peron?</font></p>
+<br />
+<br />
+<br />
+<br />
+<a href=""><img src="img/landing page/daisy.jpg" alt="Dog" style="width:500px;height:500px;float:left;"</a>
 
+ <a href=""><img src="img/landing page/leo.jpg" alt="Cat" style="width:500px;height:500px;"> </a>
 </div>
 </div>
 
