@@ -1,5 +1,5 @@
 .newsletter-strip {
-	background: $txstMaroon;
+	background: #47A617;
 	color: $white;
 	@extend %group;
 	font: toem(16px) $lato;
@@ -14,7 +14,7 @@
 			margin-bottom: 16px;
 		}
 		.btn {
-			background: $txstGold;
+			background: #47A617;
 			border: none;
 			margin: 12px 0;
 			&:hover {
@@ -28,9 +28,43 @@
 			margin-bottom: 27px;
 		}
 		input[type=text] {
+			background: #47A617;
+			border-left: none;
+			border-right: none;
+			border-top: none;
 			display: block;
 			font: toem(16.84px) $lato;
-			color: $black;
+			font-color: $white;
+			margin-bottom:16px;
+			padding: 12px 10px 13px;
+			width: 100%;
+			&:focus {
+				outline: none;
+			}
+		}
+		input[type=subj] {
+			display: block;
+			background: #47A617;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			font: toem(16.84px) $lato;
+			text-color: $white;
+			margin-bottom:16px;
+			padding: 12px 10px 13px;
+			width: 100%;
+			&:focus {
+				outline: none;
+			}
+		}
+		input[type=msg] {
+			background: #47A617;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+			display: block;
+			font: toem(16.84px) $lato;
+			color: $white;
 			margin-bottom:16px;
 			padding: 12px 10px 13px;
 			width: 100%;
@@ -48,7 +82,7 @@
 	        width: 2px;
 		}
 		::-webkit-input-placeholder {
-				color: $black;
+				color: $white;
 		}
 	}
 	@include breakpoint(tablet) {
@@ -84,14 +118,26 @@
 				margin-bottom: 5px;
 			}
 			.btn {
-				display: inline;
+				display: block;
 				padding: 14px 55px 15px;
 			}
 			input[type="text"] {
 				display: inline;
 				margin-bottom: 56px;
 				padding-bottom: 13px;
-				width: 33%;
+				width: 27%;
+			}
+			input[type="subj"] {
+				display: inline;
+				margin-bottom: 56px;
+				padding-bottom: 13px;
+				width: 56.5%;
+			}
+			input[type="msg"] {
+				display: inline;
+				margin-bottom: 56px;
+				padding-bottom: 100px;
+				width: 56.5%;
 			}
 			h2 {
 				margin: 0;
