@@ -8,6 +8,8 @@
  
  if (isset($_GET['logout'])) {
   unset($_SESSION['user']);
+    unset($_SESSION['email']);
+     unset($_SESSION['ind']);
   session_unset();
   session_destroy();
   header("Location: Index.php");

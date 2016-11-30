@@ -1,22 +1,47 @@
 <?php
- ob_start();
- session_start();
- require_once 'DBconnect.php';
- 
- // if session is not set this will redirect to login page
- if( !isset($_SESSION['user']) ) {
-  header("Location: Index.php");
-  exit;
- }
+    ob_start();
+    session_start();
+    
+    
     $logged = $_SESSION['user'];
     echo $logged;
- // select loggedin users detail
-    #$res=mysqli_query($conn, "SELECT * FROM user WHERE first_name= $logged");
-    #$userRow=mysqli_fetch_array($res) ;
-;
-;
-
-?>
+    
+    $gender= "";
+    $im="";
+    $name="";
+    $location="";
+    $locationcity="";
+    $breed="";
+    $_SESSION['choice'] ="dogs";
+    $ind="";
+    //if (isset($_POST['submit'])) {
+      //  if(isset($_POST['radio']))
+        //{   $selection = $_POST['radio'];
+            require_once 'DBconnect2.php';
+            
+            //if ($selection == 'dogs'){
+                $sql = "SELECT * FROM dogs ORDER BY RAND() LIMIT 19;";
+                $mq = mysqli_query($con, $sql) or die (mysqli_error($con));
+                while ($col = mysqli_fetch_row($mq)) {
+                    $im=$col[1];
+                    $name=$col[3];
+                    $location=$col['6'];
+                    $locationcity=$col['7'];
+                    $breed=$col['4'];
+                    $_SESSION['ind']=$col['8'];
+                }
+    //if (isset($_POST['btn'])){
+      //  $choice = $_POST['btn'];
+        //if ($choice == 'like'){
+          //  $file="addindex.php";
+            //require $file;
+            //}
+        //}
+    
+            //}
+       // }
+    //}
+    ?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -52,7 +77,7 @@ document.createElement( "picture" );
 <nav id="navigation">
 <strong>MAIN MENU</strong>
 <ul class="menu">
-<li><a href="#">Home</a></li>
+<li><a href="Home.php">Home</a></li>
 <li><a href="UserAccountPage.html">Hey, <?php echo $logged; ?></a></li>
 <li><a href="Logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
 </ul>
@@ -63,41 +88,24 @@ document.createElement( "picture" );
 </nav>
 </div>
 </header>
-<div class="large-banner">
-<div class="overlay">
-<img class="logo-image" srcset="img/logos/ss_logo.png" alt="" />
 </div>
 </div>
 <div class="text-strip" class="green">
 <div class="wrapper">
-<blockquote>SnoutScout</blockquote><p><font size="+2"><br/>Get started, are you a cat person or a dog pesron?</font></p>
+<img src="img/logos/ss_logo3.png" alt="logo" width= "150 px">
+<br/>
+<a href = "addindex.php"><img src="img/landing page/heart.png" alt="like" width= "75 px"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href = ""><img src="img/landing page/arrow.png" alt="next" width= "75 px" ></a>
 <br />
+<img src="<?php echo $im; ?>" alt="pet" width = "400 px" >
 <br />
+Breed: <?php echo $breed; ?>
 <br />
+Name: <?php echo $name; ?>
 <br />
-<a href="dogs.php">
-<img src="img/landing page/daisy.jpg" alt="Dog" style="width:500px;height:500px;float:left;">
-</a>
-
- <a href="cats.php"><img src="img/landing page/leo.jpg" alt="Cat" style="width:500px;height:500px;"> </a>
-</div>
-</div>
-
-</div>
-<div class="column-strip">
-<div class="wrapper">
-<div class="column-wrapper">
-<div class="column_item">
-<h2>Why Adopt?</h2>
-<h3>One at a Time</h3>
-<p class="match-height" style="height: 120px;">Animals in shelters are required to be medically up to date, and are a lot cheaper than buying from mills or stores.Unfortunately Around 2.7 million dogs and cats within the United States are euthanized every year. You can be one of the few people to help reduce the number of animals that are euthanized from kill shelters.</p>
-<a href="##">Read more</a>
-</div>
-<div class="column_item">
-<h2>Why SnoutScout?</h2>
-<h3>Easy Access to local Shelters!</h3>
-<p class="match-height" style="height: 120px;">With our mission always in mind, we work tirelessly to improve the lives of animals around the world. With our technology, you'll be able to be paired with the perfect match that you have always been waiting for. With us, you can find your best friend from just a single swipe through our catalog of animals in shelters near your location.</p>
-<a href="##">Read more</a>
+Lacation: <?php echo $location; ?>, <?php echo $locationcity; ?>, Texas
+</div><br />
 </div>
 </div>
 </div>

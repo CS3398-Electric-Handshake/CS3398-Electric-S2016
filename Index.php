@@ -1,6 +1,9 @@
 <?php
  ob_start();
  session_start();
+    
+
+    
  require_once 'DBconnect.php';
  
  //it will never let you open index(login) page if session is set
@@ -50,6 +53,7 @@
    
    if( $count == 1 && $row['Password']==$password ) {
     $_SESSION['user'] = $row['first_name'];
+    $_SESSION['email'] = $row['email'];
     header("Location: Home.php");
    } else {
     $errMSG = "Incorrect Credentials, Try again...";
@@ -96,7 +100,7 @@ document.createElement( "picture" );
 <nav id="navigation">
 <strong>MAIN MENU</strong>
 <ul class="menu">
-<li><a href="Index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="Index.php">Login</a></li>
 <li><a href="Register.php">Sign Up!</a></li>
 </ul>
