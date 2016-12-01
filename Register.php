@@ -75,7 +75,7 @@
     
    if ($res) {
     $errTyp = "success";
-    $errMSG = "Successfully registered, you may <a href='index.php'>sign in now</a>";
+    $errMSG = "Successfully registered, you may <a href='Index.php'>sign in now</a>";
     unset($name);
     unset($email);
     unset($pass);
@@ -127,7 +127,7 @@ document.createElement( "picture" );
 <nav id="navigation">
 <strong>MAIN MENU</strong>
 <ul class="menu">
-<li><a href="Index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="Index.php">Login</a></li>
 <li><a href="Register.php">Sign Up!</a></li>
 </ul>
