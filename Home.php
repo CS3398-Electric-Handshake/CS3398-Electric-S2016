@@ -14,7 +14,6 @@
     #$res=mysqli_query($conn, "SELECT * FROM user WHERE first_name= $logged");
     #$userRow=mysqli_fetch_array($res) ;
 ;
-;
 
 ?>
 <!DOCTYPE html>
@@ -53,7 +52,7 @@ document.createElement( "picture" );
 <strong>MAIN MENU</strong>
 <ul class="menu">
 <li><a href="#">Home</a></li>
-<li><a href="UserAccountPage.html">Hey, <?php echo $logged; ?></a></li>
+<li><a href="UserAccountPage.php">Hey, <?php echo $logged; ?></a></li>
 <li><a href="Logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
 </ul>
 <ul class="sub-menu">
