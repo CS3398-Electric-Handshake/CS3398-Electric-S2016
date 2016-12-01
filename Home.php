@@ -90,13 +90,13 @@ document.createElement( "picture" );
 <h2>Why Adopt?</h2>
 <h3>One at a Time</h3>
 <p class="match-height" style="height: 120px;">Animals in shelters are required to be medically up to date, and are a lot cheaper than buying from mills or stores.Unfortunately Around 2.7 million dogs and cats within the United States are euthanized every year. You can be one of the few people to help reduce the number of animals that are euthanized from kill shelters.</p>
-<a href="##">Read more</a>
+
 </div>
 <div class="column_item">
 <h2>Why SnoutScout?</h2>
 <h3>Easy Access to local Shelters!</h3>
 <p class="match-height" style="height: 120px;">With our mission always in mind, we work tirelessly to improve the lives of animals around the world. With our technology, you'll be able to be paired with the perfect match that you have always been waiting for. With us, you can find your best friend from just a single swipe through our catalog of animals in shelters near your location.</p>
-<a href="##">Read more</a>
+
 </div>
 </div>
 </div>
