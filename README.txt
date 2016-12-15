@@ -47,4 +47,4 @@ Any updates and/or changes to the source code of SnoutScout will be pushed to th
 
 Authors
 -------------
-Kyle Chilek, Carlo Rodriguez
+Kyle Chilek, Carlo Rodriguez, Samuel Sugia
